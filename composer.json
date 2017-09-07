@@ -1,0 +1,19 @@
+{
+  "name": "calvinmuller/superbalist",
+  "description": "Superbalist API",
+  "type": "package",
+  "require": {
+    "guzzlehttp/guzzle": "^6.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "Superbalist\\": "src/Superbalist/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Calvin Muller",
+      "email": "calvinm@wigroup.co.za"
+    }
+  ]
+}
