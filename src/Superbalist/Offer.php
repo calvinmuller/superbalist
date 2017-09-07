@@ -2,29 +2,33 @@
 
 namespace Superbalist;
 
-use \Httpful\Request as Request;
-
 class Offer extends ApiBase
 {
 
-    public function get($parameter = null)
+    /**
+     * Get all offers
+     * @param array $parameters
+     * @return \Psr\Http\Message\ResponseInterface
+     */
+    public function all($parameters = [])
     {
-        $parameters = [
-            't' => microtime(true),
-        ];
 
-        $apiUrl = strtr(':apiBase/offers?:queryParams', array(
-            ':apiBase' => getenv('SUPERBALIST_API_URL'),
-            ':queryParams' => http_build_query($parameters),
-        ));
+        return $this->get("offers", [
+            'query' => $parameters
+        ]);
 
-        $headers = self::_getCommonHeaders();
+    }
 
-        $response = Request::get($apiUrl)
-            ->addHeaders($headers)->send();
 
-        return $response;
-
+    /**
+     * Get an offers products
+     * @param $id
+     */
+    public function find($id, $parameters = [])
+    {
+        return $this->get("feature/100-off-this-feature/{$id}", [
+            'query' => $parameters
+        ]);
     }
 
 }
