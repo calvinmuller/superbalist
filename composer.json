@@ -9,11 +9,5 @@
     "psr-4": {
       "Superbalist\\": "src/Superbalist/"
     }
-  },
-  "authors": [
-    {
-      "name": "Calvin Muller",
-      "email": "calvinm@wigroup.co.za"
-    }
-  ]
+  }
 }
