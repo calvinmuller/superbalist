@@ -9,5 +9,8 @@
     "psr-4": {
       "Superbalist\\": "src/Superbalist/"
     }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^6.5"
   }
 }

@@ -15,11 +15,16 @@ class ApiBase extends Client
      */
     public $lastApiResponse;
 
+    protected $_baseUrl = 'https://api.mobile.superbalist.com/v2/';
+
+    public function setBase($baseUrl) {
+        $this->_baseUrl = $baseUrl;
+    }
 
     public function __construct(array $config = [])
     {
         $config = [
-            'base_uri' => env('SUPERBALIST_API_URL'),
+            'base_uri' => $this->_baseUrl,
             'headers' => self::_getCommonHeaders()
         ];
 
@@ -33,7 +38,7 @@ class ApiBase extends Client
     public static function _getCommonHeaders()
     {
         return array(
-            'Host' => getenv('SUPERBALIST_API_HOST'),
+//            'Host' => getenv('SUPERBALIST_API_HOST'),
             'X-SUPERBALIST-DEVICE-ID' => 'iPhone10,1',
             'X-SUPERBALIST-APPVERSION' => '9.9.9',
             'X-SUPERBALIST-PLATFORM' => 'ios',
