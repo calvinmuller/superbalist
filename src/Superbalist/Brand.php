@@ -2,8 +2,6 @@
 
 namespace Superbalist;
 
-use \Httpful\Request as Request;
-
 class Brand extends ApiBase
 {
 
@@ -13,37 +11,24 @@ class Brand extends ApiBase
             't' => microtime(true),
         ];
 
-        $apiUrl = strtr(':apiBase/brands?:queryParams', array(
-            ':apiBase' => getenv('SUPERBALIST_API_URL'),
-            ':queryParams' => http_build_query($parameters),
-        ));
-
-        $headers = self::_getCommonHeaders();
-
-        $response = Request::get($apiUrl)
-            ->addHeaders($headers)->send();
-
-        return $response;
+        return $this->get('brands', [
+            'query' => $parameters
+        ]);
     }
 
-    public function get($brand, $parameter = null)
+    public function find($brand, $parameter = null)
     {
         $parameters = [
             't' => microtime(true),
         ];
 
-        $apiUrl = strtr(':apiBase/brand/:brand?:queryParams', array(
-            ':apiBase' => getenv('SUPERBALIST_API_URL'),
-            ':queryParams' => http_build_query($parameters),
+        $apiUrl = strtr('brand/:brand', array(
             ':brand' => $brand,
         ));
 
-        $headers = self::_getCommonHeaders();
-
-        $response = Request::get($apiUrl)
-            ->addHeaders($headers)->send();
-
-        return $response;
+        return $this->get($apiUrl, [
+            'query' => $parameters
+        ]);
 
     }
 
