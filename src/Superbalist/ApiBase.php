@@ -15,7 +15,7 @@ class ApiBase extends Client
      */
     public $lastApiResponse;
 
-    protected $_baseUrl = 'https://api.mobile.superbalist.com/';
+    protected $_baseUrl = 'https://api-mobile.superbalist.com';
 
     public function setBase($baseUrl) {
         $this->_baseUrl = $baseUrl;
