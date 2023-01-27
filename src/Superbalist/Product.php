@@ -8,7 +8,7 @@ class Product extends ApiBase
     public function find($productId = null, $parameters = [])
     {
 
-        return $this->get("v2/product/{$productId}", [
+        return $this->get("product/{$productId}", [
             'query' => $parameters
         ]);
 
