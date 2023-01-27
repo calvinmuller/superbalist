@@ -11,7 +11,7 @@ class Brand extends ApiBase
             't' => microtime(true),
         ];
 
-        return $this->get('v2/brands', [
+        return $this->get('brands', [
             'query' => $parameters
         ]);
     }
@@ -22,7 +22,7 @@ class Brand extends ApiBase
             't' => microtime(true),
         ];
 
-        $apiUrl = strtr('v2/brand/:brand', array(
+        $apiUrl = strtr('brand/:brand', array(
             ':brand' => $brand,
         ));
 
