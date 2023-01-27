@@ -13,7 +13,7 @@ class Offer extends ApiBase
     public function all($parameters = [])
     {
 
-        return $this->get("v2/offers", [
+        return $this->get("offers", [
             'query' => $parameters
         ]);
 
@@ -26,7 +26,7 @@ class Offer extends ApiBase
      */
     public function find($id, $parameters = [])
     {
-        return $this->get("v2/feature/100-off-this-feature/{$id}", [
+        return $this->get("feature/100-off-this-feature/{$id}", [
             'query' => $parameters
         ]);
     }
