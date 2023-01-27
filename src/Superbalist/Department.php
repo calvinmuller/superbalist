@@ -25,7 +25,7 @@ class Department extends ApiBase
             'per_page' => $perPage
         ]);
 
-        return $this->get("v2/browse{$department}", [
+        return $this->get("browse{$department}", [
             'query' => $parameters
         ]);
     }
