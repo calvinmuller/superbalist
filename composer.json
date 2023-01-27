@@ -3,7 +3,7 @@
   "description": "Superbalist API",
   "type": "package",
   "require": {
-    "guzzlehttp/guzzle": "^7.5"
+    "guzzlehttp/guzzle": "^6.5"
   },
   "autoload": {
     "psr-4": {
